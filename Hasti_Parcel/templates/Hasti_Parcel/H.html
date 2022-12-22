@@ -1,0 +1,48 @@
+<!doctype html>
+<head>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function (){
+            $("#status").change(function() {
+                // foo is the id of the other select box 
+                if ($(this).val() == 'منفی') {
+                    $("#foo").show();
+                }else{
+                    $("#foo").hide();
+                } 
+            });
+        });
+    </script>
+
+</head>
+
+
+<body>
+    <p>
+        <select id="status" name="status" style="width: 212px;">
+            <option value="مثبت"> مثبت </option>
+            <option value="منفی">منفی</option>
+            <option value='بی پاسخ'>بی پاسخ</option>
+            <option value='ورود به دفتر'>ورود به دفتر </option>
+
+        </select>
+    </p>
+
+    <p id="foo" style="display:none;">
+        <select style="width: 212px;">
+            <option value="itemw">اتباع</option>
+            <option value="items">درخواست بیمه -مدارک لازم ندارد</option>
+            <option value="itemp">وسیله نقلیه مورد نظر را ندارد</option>
+            <option value="itemp">انصراف(ساعت کاری)</option>
+            <option value="itemw">انصراف(درآمد کم)</option>
+            <option value="itemw">کسری مدارک(امکان تکمیل ندارد)</option>
+            <option value="itemw">سن متقاضی بالای 50 یا زیر 16</option>
+            <option value="itemw">ساکن شهر دیگر</option>
+            <option value="itemw">سایر</option>
+      
+        </select>
+    </p>
+
+</body>

@@ -1,0 +1,102 @@
+{% load bootstrap5 %}
+{% load jformat %}
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+
+<head>
+    <center>   <h5> پیگیری سفرا </h5></center>  
+
+    <title>     </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+
+<body  dir='rtl'>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <h4>        </h4>
+    <div class="row"  dir="rtl">
+        <div class="col-11">
+            <table  class="table table-sm"  'sortable'> 
+
+                       
+                <tr>
+            
+     
+                    <th>نتیجه پیگیری 1  </th>
+                    <th>تاریخ پیگیری 1 </th>
+
+                    <th>نتیجه پیگیری 2  </th>
+                    <th>تاریخ پیگیری 2 </th>
+
+                    <th>نتیجه پیگیری 3  </th>
+                    <th>تاریخ پیگیری 3 </th>
+
+                    <th>نتیجه پیگیری 4  </th>
+                    <th>تاریخ پیگیری 4 </th>
+
+                    <th>نتیجه پیگیری 5  </th>
+                    <th>تاریخ پیگیری 5 </th>
+                    <th>نتیجه پیگیری 6  </th>
+                    <th>تاریخ پیگیری 6 </th>
+
+                    <th>نتیجه پیگیری 7  </th>
+                    <th>تاریخ پیگیری 7 </th>
+
+                    <th>نتیجه پیگیری 8  </th>
+                    <th>تاریخ پیگیری 8 </th>
+                    
+                    <th>نتیجه پیگیری 9  </th>
+                    <th>تاریخ پیگیری 9 </th>
+
+                    <th>نتیجه پیگیری 10  </th>
+                    <th>تاریخ پیگیری 10 </th>
+                    
+                    
+                     
+                </tr>
+                {% for ff in form3 %}
+                <tr>
+            
+
+                                    {% for comment in Activate_app_model.comments.all %}
+                                 
+                    <th>  {{comment.Comment_follow }}</th>
+                    <th>{{comment.created_follow|jformat}} </th>
+                     
+                                    {% endfor %}
+                                    {% endfor %}
+                </tr>
+                                    <h5>   </h5>
+
+
+
+
+
+
+            </table> 
+            <h5>   </h5>
+
+            <h5>ثبت پیگیری جدید </h5>
+                        <form  action="" method="POST"  > 
+                            {% csrf_token %}
+                            {{form3}}
+                            <button  class="btn  btn-warning"   type="submit" >  ثبت پیگیری </button>
+                        </form>
+                        <form  action="{% url 'absrob-detail-status' Activate_app_model.id %}" method="POST"  > 
+                            {% csrf_token %}
+                            {{form4}}
+                            <button  class="btn  btn-warning"   type="submit" >   وضعیت</button>
+                        </form>
+            </div>
+        </div>
+
+</body>
+
+</html>
